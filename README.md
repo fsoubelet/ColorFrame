@@ -14,7 +14,7 @@ pip install colorframe
 
 With this package is installed in the activated enrivonment, usage is:
 ```bash
-python -m photocrawl -p path_to_files
+python -m colorframe -p path_to_files
 ```
 
 Detailed options go as follows:
@@ -22,7 +22,7 @@ Detailed options go as follows:
 usage: __main__.py [-h] -p PATH [-hv VERTICAL_BORDER] [-hb HORIZONTAL_BORDER]
                    [-c COLOR] [-l LOG_LEVEL]
 
-Adding a whiteframe border to your images.
+Adding a color frame border to your images.
 
 optional arguments:
   -h, --help            show this help message and exit
