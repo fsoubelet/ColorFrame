@@ -9,7 +9,7 @@ from pathlib import Path
 
 from loguru import logger
 
-from colorframe.border import add_whiteframe_to_image, process_directory_of_images
+from colorframe.border import add_colorframe_to_image, process_directory_of_images
 from colorframe.utils import create_output_dir
 
 
@@ -40,7 +40,7 @@ class BorderCreator:
                 color=self.color,
             )
         elif self.target_path.is_file():
-            add_whiteframe_to_image(
+            add_colorframe_to_image(
                 image_path=self.target_path,
                 border=(self.vertical_border, self.horizontal_border),
                 color=self.color,

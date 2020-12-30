@@ -49,7 +49,7 @@ def process_directory_of_images(
             )
         ):
             _ = Parallel(n_jobs=-1)(
-                delayed(add_whiteframe_to_image)(image_path, border, color)
+                delayed(add_colorframe_to_image)(image_path, border, color)
                 for image_path in images_to_process
             )  # overhead of Parallel isn't big enough on a few files to justify not using it ;)
 
@@ -73,7 +73,7 @@ def _log_directory_status(checked_path: Path) -> int:
 
 
 @logger.catch(message="Possible PIL internal exceptions here")
-def add_whiteframe_to_image(
+def add_colorframe_to_image(
     image_path: Path, border: Union[int, Tuple[int, int]], color: str = "white"
 ) -> None:
     """
@@ -92,7 +92,7 @@ def add_whiteframe_to_image(
     if _log_image_file_status(image_path) == 1 and (
         isinstance(border, int) or isinstance(border, tuple)
     ):
-        output_file = Path("outputs") / (image_path.stem + "_whiteframed" + image_path.suffix)
+        output_file = Path("outputs") / (image_path.stem + f"_{color}framed" + image_path.suffix)
         image = Image.open(image_path)
 
         try:
@@ -118,7 +118,7 @@ def _log_image_file_status(checked_path: Path) -> int:
     if not checked_path.is_file():
         logger.error(f"Provided path at '{checked_path}' is not a valid file")
         return 0
-    elif checked_path.suffix.lower() not in (".jpg", ".jpeg"):
+    elif checked_path.suffix.lower() not in (".jpg", ".jpeg", ".png"):
         logger.error(f"File at '{checked_path}' is not an image")
         return 0
     else:
