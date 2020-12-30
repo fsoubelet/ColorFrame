@@ -1,6 +1,8 @@
-# ColorFrame: Add Colored Borders to Your Pictures
+<h1 align="center">
+  <b>colorframe</b>
+</h1>
 
-A simple script to created add a colored frame onto my photography pictures.
+A simple package to add a colored frame on pictures.
 
 ## Install
 
@@ -12,36 +14,48 @@ pip install colorframe
 
 ## Usage
 
-With this package is installed in the activated enrivonment, usage is:
+With this package is installed in the activated enrivonment, it can be called through `python -m colorframe` or through a newly created `colorframe` command.
+
+Detailed usage goes as follows:
 ```bash
-python -m photocrawl -p path_to_files
-```
+Usage: colorframe [OPTIONS] [PATH]
 
-Detailed options go as follows:
-```bash
-usage: __main__.py [-h] -p PATH [-hv VERTICAL_BORDER] [-hb HORIZONTAL_BORDER]
-                   [-c COLOR] [-l LOG_LEVEL]
+  Add a colored frame on pictures, easily.
 
-Adding a whiteframe border to your images.
+Arguments:
+  [PATH]  Location, relative or absolute, to the file or directory of files to
+          add a colored border to.
 
-optional arguments:
-  -h, --help            show this help message and exit
-  -p PATH, --path PATH  Path to the file or directory of file to add a
-                        whiteframe to.
-  -hv VERTICAL_BORDER, --vertical_border VERTICAL_BORDER
-                        Size (width) of the whiteframe to add on the vertical
-                        image edges. Defaults to 150.
-  -hb HORIZONTAL_BORDER, --horizontal_border HORIZONTAL_BORDER
-                        Size (height) of the whiteframe to add on the
-                        horizontal image edges. Defaults to 150.
-  -c COLOR, --color COLOR
-                        The desired color of the added border. Should be a
-                        keyword recognized by Pillow. Defaults to 'white'.
-  -l LOG_LEVEL, --logs LOG_LEVEL
-                        The logging level. Defaults to 'info'.
+
+Options:
+  --vertical INTEGER    Size (width) of the whiteframe to add on the vertical
+                        image edges.  [default: 150]
+
+  --horizontal INTEGER  Size (height) of the whiteframe to add on the
+                        horizontal image edges.  [default: 150]
+
+  --color TEXT          The desired color of the added border. Should be a
+                        keyword recognized by Pillow.  [default: white]
+
+  --log-level TEXT      The base console logging level. Can be 'debug',
+                        'info', 'warning' and 'error'.  [default: info]
+
+  --install-completion  Install completion for the current shell.
+  --show-completion     Show completion for the current shell, to copy it or
+                        customize the installation.
+
+  --help                Show this message and exit.
 ```
 
 The script will crawl files, add borders and export the results in a newly created `outputs` folder.
+
+You can otherwise import the high-level object from the package, and use at your convenience:
+```python
+from colorframe import BorderCreator
+
+border_api = BorderCreator(commandline_path="...", vertical_border=150, horizontal_border=100, color="blue")
+border_api.execute_target()
+```
 
 ## License
 

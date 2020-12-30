@@ -8,9 +8,9 @@ Script to add a whiteframe to my pictures
 from pathlib import Path
 from typing import List, Tuple, Union
 
-from PIL import Image, ImageFile, ImageOps
 from joblib import Parallel, delayed
 from loguru import logger
+from PIL import Image, ImageFile, ImageOps
 
 from colorframe.utils import timeit
 
