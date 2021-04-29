@@ -1,0 +1,18 @@
+version: 2
+updates:
+- package-ecosystem: pip
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: joblib
+    versions:
+    - "> 0.16.0, < 1"
+  - dependency-name: mypy
+    versions:
+    - "> 0.782, < 1"
+  - dependency-name: pillow
+    versions:
+    - ">= 8.a, < 9"
