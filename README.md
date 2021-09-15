@@ -53,10 +53,16 @@ You can otherwise import the high-level object from the package, and use at your
 ```python
 from colorframe import BorderCreator
 
-border_api = BorderCreator(commandline_path="...", vertical_border=150, horizontal_border=100, color="blue")
+border_api = BorderCreator(
+    commandline_pathp="path_to_your_images", vertical_border=150, horizontal_border=100, color="blue"
+)
 border_api.execute_target()
 ```
 
-## License
+---
 
-Copyright &copy; 2020 Felix Soubelet. [MIT License](LICENSE)
+<div align="center">
+  <sub><strong>Made with ♥︎ by fsoubelet</strong></sub>
+  <br>
+  <sub><strong>MIT &copy 2020 Felix Soubelet</strong></sub>
+</div>
