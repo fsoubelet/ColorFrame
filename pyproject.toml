@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "colorframe"
-version = "0.2.0"
+version = "0.2.1"
 description = "Python utility to add borders to my photography pictures"
 authors = ["Felix Soubelet <felix.soubelet@protonmail.com>"]
 license = "MIT"
@@ -11,7 +11,7 @@ repository = "https://github.com/fsoubelet/toychain"
 python = "^3.6"
 joblib = "^1.0"
 loguru = "^0.5.1"
-Pillow = "^7.2.0"
+Pillow = "^8.3.2"
 typer = "^0.3.2"
 
 [tool.poetry.dev-dependencies]
