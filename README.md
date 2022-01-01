@@ -6,7 +6,7 @@ A simple package to add a colored frame on pictures.
 
 ## Install
 
-This code is compatible with `Python 3.6+`.
+This code is compatible with `Python 3.7+`.
 Install it in your virtual enrivonment with:
 ```bash
 pip install colorframe

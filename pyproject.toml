@@ -8,7 +8,7 @@ readme = "README.md"
 repository = "https://github.com/fsoubelet/toychain"
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.7"
 joblib = "^1.0"
 loguru = "^0.5.1"
 Pillow = "^8.3.2"
