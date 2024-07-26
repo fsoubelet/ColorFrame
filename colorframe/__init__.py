@@ -12,3 +12,5 @@ __version__ = "0.2.2"
 __author__ = "Felix Soubelet"
 __author_email__ = "felix.soubelet@liverpool.ac.uk"
 __license__ = "MIT"
+
+__all__ = ["BorderCreator"]
