@@ -6,8 +6,9 @@ A simple package to add a colored frame on pictures.
 
 ## Install
 
-This code is compatible with `Python 3.7+`.
+This code is compatible with all currently supported Python versions.
 Install it in your virtual enrivonment with:
+
 ```bash
 pip install colorframe
 ```
@@ -17,6 +18,7 @@ pip install colorframe
 With this package is installed in the activated enrivonment, it can be called through `python -m colorframe` or through a newly created `colorframe` command.
 
 Detailed usage goes as follows:
+
 ```bash
 Usage: colorframe [OPTIONS] [PATH]
 
@@ -50,6 +52,7 @@ Options:
 The script will crawl files, add borders and export the results in a newly created `outputs` folder.
 
 You can otherwise import the high-level object from the package, and use at your convenience:
+
 ```python
 from colorframe import BorderCreator
 
