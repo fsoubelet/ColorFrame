@@ -20,33 +20,33 @@ With this package is installed in the activated enrivonment, it can be called th
 Detailed usage goes as follows:
 
 ```bash
-Usage: colorframe [OPTIONS] [PATH]
-
-  Add a colored frame on pictures, easily.
-
-Arguments:
-  [PATH]  Location, relative or absolute, to the file or directory of files to
-          add a colored border to.
-
-
-Options:
-  --vertical INTEGER    Size (width) of the whiteframe to add on the vertical
-                        image edges.  [default: 150]
-
-  --horizontal INTEGER  Size (height) of the whiteframe to add on the
-                        horizontal image edges.  [default: 150]
-
-  --color TEXT          The desired color of the added border. Should be a
-                        keyword recognized by Pillow.  [default: white]
-
-  --log-level TEXT      The base console logging level. Can be 'debug',
-                        'info', 'warning' and 'error'.  [default: info]
-
-  --install-completion  Install completion for the current shell.
-  --show-completion     Show completion for the current shell, to copy it or
-                        customize the installation.
-
-  --help                Show this message and exit.
+Usage: python -m colorframe [OPTIONS] [PATH]                                                       
+                                                                                                    
+ Add a colored frame on pictures, easily.                                                           
+                                                                                                    
+╭─ Arguments ──────────────────────────────────────────────────────────────────────────────────────╮
+│   path      [PATH]  Location, relative or absolute, to the file or directory of files to add a   │
+│                     colored border to.                                                           │
+│                     [default: None]                                                              │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ────────────────────────────────────────────────────────────────────────────────────────╮
+│ --vertical                  INTEGER  Size (width) of the whiteframe to add on the vertical image │
+│                                      edges.                                                      │
+│                                      [default: 150]                                              │
+│ --horizontal                INTEGER  Size (height) of the whiteframe to add on the horizontal    │
+│                                      image edges.                                                │
+│                                      [default: 150]                                              │
+│ --color                     TEXT     The desired color of the added border. Should be a keyword  │
+│                                      recognized by Pillow.                                       │
+│                                      [default: white]                                            │
+│ --log-level                 TEXT     The base console logging level. Can be 'debug', 'info',     │
+│                                      'warning' and 'error'.                                      │
+│                                      [default: info]                                             │
+│ --install-completion                 Install completion for the current shell.                   │
+│ --show-completion                    Show completion for the current shell, to copy it or        │
+│                                      customize the installation.                                 │
+│ --help                               Show this message and exit.                                 │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
 
 The script will crawl files, add borders and export the results in a newly created `outputs` folder.
