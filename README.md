@@ -7,16 +7,15 @@ A simple package to add colored borders on pictures.
 ## Install
 
 This code is compatible with all currently supported Python versions.
-One can install it in a virtual enrivonment with:
+It can be installe in a virtual enrivonment with:
 
 ```bash
-pip install colorframe
+python -m pip install colorframe
 ```
 
 ## Usage
 
-With this package is installed in the activated enrivonment, it can be called through `python -m colorframe` or through a newly created `colorframe` command.
-
+With this package is installed in the activated enrivonment, it can be called through `python -m colorframe`.
 Detailed usage goes as follows:
 
 ```bash
