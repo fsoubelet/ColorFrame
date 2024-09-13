@@ -54,13 +54,17 @@ Detailed usage goes as follows:
 
 The script will crawl files, add borders and export the results in a newly created `outputs` folder.
 
-You can otherwise import the high-level object from the package, and use at your convenience:
+You can otherwise import the high-level object from the package, and use at your convenience.
+For instance, to add a blue border of 150px on the left and 72px on the bottom of all images in a folder:
 
 ```python
 from colorframe import BorderCreator
 
 border_api = BorderCreator(
-    commandline_pathp="path_to_your_images", left_border=150, bottom_border=112, color="blue"
+    commandline_pathp="path/to/images/",
+    left_border=150,
+    bottom_border=72,
+    color="blue",
 )
 border_api.execute_target()
 ```
