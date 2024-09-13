@@ -5,7 +5,10 @@ Created on 2020.07.30
 High level object to handle operations.
 """
 
+import sys
+
 import typer
+from loguru import logger
 
 from colorframe.api import BorderCreator
 from colorframe.utils import set_logger_level
@@ -20,10 +23,10 @@ def create(
         help="Location, relative or absolute, to the file or directory of files to add a "
         "colored border to.",
     ),
-    left: int = typer.Option(100, help="Width of the frame to add on the left image edge."),
-    right: int = typer.Option(100, help="Width of the frame to add on the right image edge."),
-    top: int = typer.Option(100, help="Height of the frame to add on the top image edge."),
-    bottom: int = typer.Option(100, help="Height of the frame to add on the bottom image edge."),
+    left: int = typer.Option(0, help="Width of the frame to add on the left image edge."),
+    right: int = typer.Option(0, help="Width of the frame to add on the right image edge."),
+    top: int = typer.Option(0, help="Height of the frame to add on the top image edge."),
+    bottom: int = typer.Option(0, help="Height of the frame to add on the bottom image edge."),
     color: str = typer.Option(
         "white",
         help="The desired color of the added border. Should be a keyword recognized by Pillow.",
@@ -35,6 +38,10 @@ def create(
 ) -> None:
     """Add a colored frame on pictures, easily."""
     set_logger_level(log_level)
+
+    if all(side == 0 for side in (left, right, top, bottom)):
+        logger.error("Provide at least one side to add a border to.")
+        sys.exit(1)
 
     border_api = BorderCreator(path, left, right, top, bottom, color)
     border_api.execute_target()
