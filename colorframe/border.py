@@ -98,7 +98,7 @@ def add_colorframe_to_image(
         try:
             bordered_image: Image = ImageOps.expand(image, border, fill=color)
             bordered_image.save(output_file)
-        except OSError as pillow_error:  # the strange 'image file is truncated' on big files
+        except OSError:  # the strange 'image file is truncated' on big files
             logger.error(
                 f"An error happened during PIL handling of the image at '{image_path.absolute()}'"
             )
