@@ -20,13 +20,10 @@ def create(
         help="Location, relative or absolute, to the file or directory of files to add a "
         "colored border to.",
     ),
-    vertical: int = typer.Option(
-        150, help="Size (width) of the whiteframe to add on the vertical image edges."
-    ),
-    horizontal: int = typer.Option(
-        150,
-        help="Size (height) of the whiteframe to add on the horizontal image edges.",
-    ),
+    left: int = typer.Option(100, help="Width of the frame to add on the left image edge."),
+    right: int = typer.Option(100, help="Width of the frame to add on the right image edge."),
+    top: int = typer.Option(100, help="Height of the frame to add on the top image edge."),
+    bottom: int = typer.Option(100, help="Height of the frame to add on the bottom image edge."),
     color: str = typer.Option(
         "white",
         help="The desired color of the added border. Should be a keyword recognized by Pillow.",
@@ -39,7 +36,7 @@ def create(
     """Add a colored frame on pictures, easily."""
     set_logger_level(log_level)
 
-    border_api = BorderCreator(path, vertical, horizontal, color)
+    border_api = BorderCreator(path, left, right, top, bottom, color)
     border_api.execute_target()
 
 
