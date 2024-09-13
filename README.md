@@ -2,12 +2,12 @@
   <b>colorframe</b>
 </h1>
 
-A simple package to add a colored frame on pictures.
+A simple package to add colored borders on pictures.
 
 ## Install
 
 This code is compatible with all currently supported Python versions.
-Install it in your virtual enrivonment with:
+One can install it in a virtual enrivonment with:
 
 ```bash
 pip install colorframe
