@@ -19,13 +19,17 @@ class BorderCreator:
     def __init__(
         self,
         commandline_path: str,
-        vertical_border: int = 100,
-        horizontal_border: int = 100,
+        left_border: int = 100,
+        right_border: int = 100,
+        top_border: int = 100,
+        bottom_border: int = 100,
         color: str = "white",
     ):
         self.target_path = Path(commandline_path)
-        self.vertical_border = vertical_border
-        self.horizontal_border = horizontal_border
+        self.left_border = left_border
+        self.right_border = right_border
+        self.top_border = top_border
+        self.bottom_border = bottom_border
         self.color = color
         logger.debug("BorderCreator instantiation successful")
 
@@ -36,13 +40,13 @@ class BorderCreator:
         if self.target_path.is_dir():
             process_directory_of_images(
                 directory_path=self.target_path,
-                border=(self.vertical_border, self.horizontal_border),
+                borders=(self.left_border, self.right_border, self.top_border, self.bottom_border),
                 color=self.color,
             )
         elif self.target_path.is_file():
             add_colorframe_to_image(
                 image_path=self.target_path,
-                border=(self.vertical_border, self.horizontal_border),
+                borders=(self.left_border, self.right_border, self.top_border, self.bottom_border),
                 color=self.color,
             )
         else:
