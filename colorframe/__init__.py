@@ -6,11 +6,11 @@ Created on 2020.07.30
 from .api import BorderCreator
 
 __title__ = "colorframe"
-__description__ = "A simple package to add a colored frame on pictures."
+__description__ = "A simple package to add colored borders on pictures."
 __url__ = "https://github.com/fsoubelet/ColorFrame"
-__version__ = "0.2.2"
+__version__ = "0.3.0"
 __author__ = "Felix Soubelet"
-__author_email__ = "felix.soubelet@liverpool.ac.uk"
+__author_email__ = "felix.soubelet@cern.ch"
 __license__ = "MIT"
 
 __all__ = ["BorderCreator"]

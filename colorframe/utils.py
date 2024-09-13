@@ -4,11 +4,13 @@ Created on 2020.07.30
 
 Some utilities for main functionality.
 """
+
 import sys
 import time
+from collections.abc import Iterator
 from contextlib import contextmanager
 from pathlib import Path
-from typing import Callable, Iterator
+from typing import Callable
 
 from loguru import logger
 
