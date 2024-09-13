@@ -6,7 +6,6 @@ Script to add a whiteframe to my pictures
 """
 
 from pathlib import Path
-from typing import List, Tuple, Union
 
 from joblib import Parallel, delayed
 from loguru import logger
@@ -33,7 +32,7 @@ def process_directory_of_images(
         Nothing.
     """
     if _log_directory_status(directory_path) != 0:
-        images_to_process: List[Path] = sorted(
+        images_to_process: list[Path] = sorted(
             set(
                 list(directory_path.rglob("*.jpg"))
                 + list(directory_path.rglob("*.JPG"))

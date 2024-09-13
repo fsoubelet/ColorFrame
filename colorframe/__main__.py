@@ -24,7 +24,8 @@ def create(
         150, help="Size (width) of the whiteframe to add on the vertical image edges."
     ),
     horizontal: int = typer.Option(
-        150, help="Size (height) of the whiteframe to add on the horizontal image edges.",
+        150,
+        help="Size (height) of the whiteframe to add on the horizontal image edges.",
     ),
     color: str = typer.Option(
         "white",

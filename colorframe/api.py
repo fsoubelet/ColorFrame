@@ -4,6 +4,7 @@ Created on 2020.07.30
 
 High level object to handle operations.
 """
+
 import sys
 from pathlib import Path
 
@@ -40,13 +41,23 @@ class BorderCreator:
         if self.target_path.is_dir():
             process_directory_of_images(
                 directory_path=self.target_path,
-                borders=(self.left_border, self.right_border, self.top_border, self.bottom_border),
+                borders=(
+                    self.left_border,
+                    self.right_border,
+                    self.top_border,
+                    self.bottom_border,
+                ),
                 color=self.color,
             )
         elif self.target_path.is_file():
             add_colorframe_to_image(
                 image_path=self.target_path,
-                borders=(self.left_border, self.right_border, self.top_border, self.bottom_border),
+                borders=(
+                    self.left_border,
+                    self.right_border,
+                    self.top_border,
+                    self.bottom_border,
+                ),
                 color=self.color,
             )
         else:

@@ -4,6 +4,7 @@ Created on 2020.07.30
 
 Some utilities for main functionality.
 """
+
 import sys
 import time
 from contextlib import contextmanager
