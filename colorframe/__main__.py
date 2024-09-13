@@ -43,7 +43,7 @@ def create(
         logger.error("Provide at least one side to add a border to.")
         sys.exit(1)
 
-    border_api = BorderCreator(path, left, right, top, bottom, color)
+    border_api = BorderCreator(path, left, top, right, bottom, color)
     border_api.execute_target()
 
 
