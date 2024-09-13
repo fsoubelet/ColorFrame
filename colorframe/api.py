@@ -20,10 +20,10 @@ class BorderCreator:
     def __init__(
         self,
         commandline_path: str,
-        left_border: int = 100,
-        right_border: int = 100,
-        top_border: int = 100,
-        bottom_border: int = 100,
+        left_border: int,
+        right_border: int,
+        top_border: int,
+        bottom_border: int,
         color: str = "white",
     ):
         self.target_path = Path(commandline_path)
