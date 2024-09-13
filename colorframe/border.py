@@ -65,9 +65,9 @@ def _log_directory_status(checked_path: Path) -> int:
     if not checked_path.is_dir():
         logger.error(f"Provided path at '{checked_path}' is not a valid directory")
         return 0
-    else:
-        logger.info(f"Treating directory at '{checked_path.absolute()}'")
-        return 1
+
+    logger.info(f"Treating directory at '{checked_path.absolute()}'")
+    return 1
 
 
 @logger.catch(message="Possible PIL internal exceptions here")
@@ -111,9 +111,10 @@ def _log_image_file_status(checked_path: Path) -> int:
     if not checked_path.is_file():
         logger.error(f"Provided path at '{checked_path}' is not a valid file")
         return 0
-    elif checked_path.suffix.lower() not in (".jpg", ".jpeg", ".png"):
+
+    if checked_path.suffix.lower() not in (".jpg", ".jpeg", ".png"):
         logger.error(f"File at '{checked_path}' is not an image")
         return 0
-    else:
-        logger.trace(f"Treating image at '{checked_path.absolute()}'")
-        return 1
+
+    logger.trace(f"Treating image at '{checked_path.absolute()}'")
+    return 1
