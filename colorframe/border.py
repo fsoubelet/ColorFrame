@@ -18,16 +18,15 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True  # Prevent PIL from crashing on 'image fi
 
 
 def process_directory_of_images(
-    directory_path: Path, border: Union[int, Tuple[int, int]], color: str = "white"
+    directory_path: Path, borders: tuple[int, int, int, int], color: str = "white"
 ) -> None:
     """
     Add a whiteframe border to all valid images detected in the provided directory.
 
     Args:
         directory_path: a pathlib.Path object to a directory location.
-        border: size of the border to be applied. If integer, the same size will be applied to
-                all edges. If tuple, the first value is used for the vertical edges borders,
-                and the second value for the horizontal edges borders.
+        borders: size of the border to be applied on each side. The provided
+            edges are in order the left, right, top, bottom edges.
         color: string, the keyword for the desired border color. Default 'white'.
 
     Returns:
@@ -49,7 +48,7 @@ def process_directory_of_images(
             )
         ):
             _ = Parallel(n_jobs=-1)(
-                delayed(add_colorframe_to_image)(image_path, border, color)
+                delayed(add_colorframe_to_image)(image_path, borders, color)
                 for image_path in images_to_process
             )  # overhead of Parallel isn't big enough on a few files to justify not using it ;)
 
@@ -74,29 +73,24 @@ def _log_directory_status(checked_path: Path) -> int:
 
 @logger.catch(message="Possible PIL internal exceptions here")
 def add_colorframe_to_image(
-    image_path: Path, border: Union[int, Tuple[int, int]], color: str = "white"
+    image_path: Path, borders: tuple[int, int, int, int], color: str = "white"
 ) -> None:
     """
-    Add the specified whiteframe border to the provided image, and output the result to a new file.
+    Add the specified whiteframe border to the provided image, and
+    output the result to a new file.
 
     Args:
         image_path: a pathlib.Path object to the image file's location.
-        border: size of the border to be applied. If integer, the same size will be applied to
-                all edges. If tuple, the first value is used for the vertical edges borders,
-                and the second value for the horizontal edges borders.
+        borders: size of the border to be applied on each side. The provided
+            edges are in order the left, right, top, bottom edges.
         color: string, the keyword for the desired border color. Default 'white'.
-
-    Returns:
-        Nothing, works on the image and exits.
     """
-    if _log_image_file_status(image_path) == 1 and (
-        isinstance(border, int) or isinstance(border, tuple)
-    ):
+    if _log_image_file_status(image_path) == 1 and isinstance(borders, tuple):
         output_file = Path("outputs") / (image_path.stem + f"_{color}framed" + image_path.suffix)
         image = Image.open(image_path)
 
         try:
-            bordered_image: Image = ImageOps.expand(image, border, fill=color)
+            bordered_image: Image = ImageOps.expand(image, borders, fill=color)
             bordered_image.save(output_file)
         except OSError:  # the strange 'image file is truncated' on big files
             logger.error(
