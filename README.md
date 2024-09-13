@@ -57,7 +57,7 @@ You can otherwise import the high-level object from the package, and use at your
 from colorframe import BorderCreator
 
 border_api = BorderCreator(
-    commandline_pathp="path_to_your_images", vertical_border=150, horizontal_border=100, color="blue"
+    commandline_pathp="path_to_your_images", left_border=150, bottom_border=112, color="blue"
 )
 border_api.execute_target()
 ```
