@@ -25,7 +25,7 @@ def process_directory_of_images(
     Args:
         directory_path: a pathlib.Path object to a directory location.
         borders: size of the border to be applied on each side. The provided
-            edges are in order the left, right, top, bottom edges.
+            edges are in order the (left, right, top, bottom) edges.
         color: string, the keyword for the desired border color. Default 'white'.
 
     Returns:
@@ -81,7 +81,7 @@ def add_colorframe_to_image(
     Args:
         image_path: a pathlib.Path object to the image file's location.
         borders: size of the border to be applied on each side. The provided
-            edges are in order the left, right, top, bottom edges.
+            edges are in order the (left, right, top, bottom) edges.
         color: string, the keyword for the desired border color. Default 'white'.
     """
     if _log_image_file_status(image_path) == 1 and isinstance(borders, tuple):
