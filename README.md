@@ -21,7 +21,7 @@ Detailed usage goes as follows:
 ```bash
  Usage: python -m colorframe [OPTIONS] [PATH]                                              
                                                                                            
- Add a colored frame on pictures, easily.                                                  
+ Add colored borders on pictures, easily.                                                  
                                                                                            
 ╭─ Arguments ─────────────────────────────────────────────────────────────────────────────╮
 │   path      [PATH]  Location, relative or absolute, to the file or directory of files   │

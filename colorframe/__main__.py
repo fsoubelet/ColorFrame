@@ -36,7 +36,7 @@ def create(
         help="The base console logging level. Can be 'debug', 'info', 'warning' and 'error'.",
     ),
 ) -> None:
-    """Add a colored frame on pictures, easily."""
+    """Add colored borders on pictures, easily."""
     set_logger_level(log_level)
 
     if all(side == 0 for side in (left, right, top, bottom)):
