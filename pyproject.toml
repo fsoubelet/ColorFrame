@@ -47,6 +47,9 @@ dependencies = [
     "typer >= 0.10",
 ]
 
+[project.scripts]
+colorframe = "colorframe:app"
+
 [project.urls]
 homepage = "https://github.com/fsoubelet/ColorFrame"
 repository = "https://github.com/fsoubelet/ColorFrame"
